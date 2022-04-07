@@ -1,0 +1,43 @@
+:root {
+    --header-grey: rgb(152, 152, 153);
+    --white: rgb(255,255,255);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+    font-family: Arial,Helvetica, sans-serif;
+}
+
+body {
+    padding: 15px 30px;
+
+}
+
+.table {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+
+}
+
+.table-header {
+    background-color: var(--header-grey);
+    width: 100%;
+    flex-direction: row;
+    color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.addNote {
+    width: fit-content;
+    padding: 0 5px;
+    align-self: end;
+}
