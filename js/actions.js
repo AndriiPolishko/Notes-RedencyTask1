@@ -1,0 +1,22 @@
+let actions = document.createElement("td");
+actions.className = "actions"
+const style = getComputedStyle(document.body)
+
+let edit = document.createElement("i");
+edit.className = "fa-solid fa-pen";
+edit.style.color = style.getPropertyValue("--dark-gray");
+
+let archive = document.createElement("i");
+archive.className = "fa-solid fa-box-archive";
+archive.style.color = style.getPropertyValue("--dark-gray");
+
+let trash = document.createElement("i");
+trash.className = "fa-solid fa-trash";
+
+trash.style.color = style.getPropertyValue("--dark-gray");
+
+actions.appendChild(edit);
+actions.appendChild(archive);
+actions.appendChild(trash);
+
+export {actions};
