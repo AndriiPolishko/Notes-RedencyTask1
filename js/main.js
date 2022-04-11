@@ -1,3 +1,4 @@
+'use strict'
 import {createNote} from "./createRow.js";
 
 const addButton = document.querySelector(".addNote");
