@@ -89,3 +89,7 @@ body {
 .container {
     display: flex;
 }
+
+select {
+    font-size: 1rem;
+}

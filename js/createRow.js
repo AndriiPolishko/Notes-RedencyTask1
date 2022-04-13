@@ -52,12 +52,14 @@ function forCategory() {
         return element;
     };
 
-    const changeIcon = (icon, classNames) => {
+    const changeIcon = (icon, classNames,e) => {
         icon.classList.remove(...icon.classList);//чистимо класи іконки
         for (const className of classNames) {
             icon.classList.add(className);
         }
-        document.querySelector(".circle").appendChild(icon);
+        let note = e.target.closest(".note");
+        let circle = note.querySelector(".circle")
+        circle.appendChild(icon);
     };
 
     const renderCategories = (parent, categories) => {
@@ -70,7 +72,7 @@ function forCategory() {
 
     const categoryChangeHandler = (e) => {
         const value = e.target.value;
-        changeIcon(icon,CATEGORIES[value].icon)
+        changeIcon(icon,CATEGORIES[value].icon,e)
     };
 
     let select = document.createElement("select");
