@@ -14,7 +14,7 @@ const changeHandle = function (e) {
     let innerText = e.target.value;
     const parentRow = e.target.closest(".note");
     const parentRowId = parentRow.getAttribute('id');
-    sessionStorage.setItem(parentRowId,innerText);
+    sessionStorage.setItem(`${parentRowId}Name`,innerText);
     e.target.value = nameTooLongHelper(innerText);
 }
 
@@ -22,7 +22,7 @@ const clickHandle = function(e) {
     const parentRow = e.target.closest(".note");
     const parentRowId = parentRow.getAttribute('id');
     if(nameReducedHelper(e.target.value))
-        e.target.value = sessionStorage.getItem(parentRowId);
+        e.target.value = sessionStorage.getItem(`${parentRowId}Name`);
 }
 
 export function changeName() {

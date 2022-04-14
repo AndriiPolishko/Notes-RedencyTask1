@@ -93,15 +93,21 @@ function forCategory() {
 }
 
 function forContent() {
-    let content = document.createElement("td");
+    let contentContainer = document.createElement("td");
+    let content = document.createElement("span");
+    content.className = "content";
     content.textContent = "Click Me";
-    return content;
+    contentContainer.appendChild(content);
+    return contentContainer;
 }
 
 function forDates() {
-    let dates = document.createElement("td");
+    const datesContainer = document.createElement("td");
+    const dates = document.createElement("span");
+    dates.className = "dates";
     dates.textContent = "Sample";
-    return dates;
+    datesContainer.appendChild(dates);
+    return datesContainer;
 }
 
 export function createNote (numberOfRows) {
