@@ -4,7 +4,7 @@ const monthVariants = ["January","February","March",
 
 const today = new Date();
 
-const day = today.getDay();
+const day = today.getDate();
 
 const month = monthVariants[today.getMonth()-1];
 

@@ -4,26 +4,30 @@ import {actions} from "./actions.js";
 function forName() {
     let name = document.createElement("td");
     let container = document.createElement("section")
-    container.className = "container";
+    container.className = "nameContainer";
     let circle = document.createElement("div");
     circle.className = "circle"
     container.appendChild(circle);
-    let nameText = document.createElement("span");
-    nameText.textContent = "name";
+    let nameText = document.createElement("textarea");
+    nameText.className = "name";
+    nameText.setAttribute("contentEditable","true")
+    nameText.textContent = "Click Me";
     container.appendChild(nameText)
     name.appendChild(container);
     return name;
 }
 
 function forCreated() {
-    let created = document.createElement("td");
-    created.textContent = suitableDayForm;
-    return created;
+    const createdCeil = document.createElement("td");
+    const createdData = document.createElement("span");
+    createdData.textContent = suitableDayForm;
+    createdCeil.appendChild(createdData);
+    return createdCeil;
 }
 
 function forCategory() {
     let CATEGORIES = {
-        "None": {
+        "Click Me": {
             name: "default",
             icon: ""
         },
@@ -90,7 +94,7 @@ function forCategory() {
 
 function forContent() {
     let content = document.createElement("td");
-    content.textContent = "Sample";
+    content.textContent = "Click Me";
     return content;
 }
 
@@ -100,8 +104,11 @@ function forDates() {
     return dates;
 }
 
-export function createNote () {
+export function createNote (numberOfRows) {
     let note = document.createElement("tr");
+
+    note.id = numberOfRows.n;
+    numberOfRows.n++;
     note.className = 'note';
 
     let name = forName();
