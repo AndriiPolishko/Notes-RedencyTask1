@@ -8,8 +8,8 @@
     <title>Notes</title>
 </head>
 <body>
-    <section class="notes">
-        <table class="table">
+    <section id="active" class="notes">
+        <table  class="table">
             <thead>
             <tr class="table-header">
                 <th>name</th>
@@ -17,8 +17,8 @@
                 <th>category</th>
                 <th>content</th>
                 <th>dates</th>
-                <th>
-                    <i class="fa-solid fa-box-archive"></i>
+                <th class="archiveAndDelete">
+                    <i class="fa-solid fa-box"></i>
                     <i class="fa-solid fa-trash"></i>
                 </th>
                 </tr>
@@ -27,7 +27,26 @@
             </tbody>
         </table>
         <button type="button" class="addNote">Create Note</button>
+    </section>
 
+    <section id="archived" class="notes">
+        <table  class="table">
+            <thead>
+            <tr class="table-header">
+                <th>name</th>
+                <th>created</th>
+                <th>category</th>
+                <th>content</th>
+                <th>dates</th>
+                <th class="archiveAndDelete">
+                    <i class="fa-solid fa-box-open"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </section>
 
     <script src="./js/main.js" type="module"></script>

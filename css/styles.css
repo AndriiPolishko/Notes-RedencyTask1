@@ -151,6 +151,22 @@ select {
 
 }
 
+.fa-solid {
+    cursor: pointer;
+}
+
+.content, .dates {
+    width: 100px;
+    color: var(--white);
+    font-size: 1rem;
+    height: 18px;
+    resize: none;
+    border: none;
+    overflow: hidden;
+    background-color: var(--note);
+
+}
+
 .fa-xmark {
     color: var(--red);
     float: right;
@@ -163,4 +179,12 @@ select {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#archived {
+    display: none;
+}
+
+.archiveAndDelete {
+    width: 40.5px;
 }

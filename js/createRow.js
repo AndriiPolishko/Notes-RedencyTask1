@@ -94,7 +94,8 @@ function forCategory() {
 
 function forContent() {
     let contentContainer = document.createElement("td");
-    let content = document.createElement("span");
+    let content = document.createElement("textarea");
+    content.setAttribute("readonly","true")
     content.className = "content";
     content.textContent = "Click Me";
     contentContainer.appendChild(content);
@@ -103,9 +104,9 @@ function forContent() {
 
 function forDates() {
     const datesContainer = document.createElement("td");
-    const dates = document.createElement("span");
+    const dates = document.createElement("textarea");
     dates.className = "dates";
-    dates.textContent = "Sample";
+    dates.setAttribute("readonly","true")
     datesContainer.appendChild(dates);
     return datesContainer;
 }

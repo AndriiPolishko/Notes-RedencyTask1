@@ -4,6 +4,7 @@ import {countRows} from "./countRows.js";
 import {changeName} from "./changeName.js";
 import {noteContent} from "./noteContent.js";
 
+
 const table = document.querySelector(".table>tbody");
 const numberOfRows = {n:0};
 let rows;
@@ -14,6 +15,6 @@ const addButtonClickEventHandle = function() {
     deleteRow();
     rows = countRows();
     changeName();
-    noteContent()
+    noteContent();
 }
 export  {addButtonClickEventHandle};
