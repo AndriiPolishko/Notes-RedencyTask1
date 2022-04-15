@@ -3,6 +3,7 @@ import {deleteRow} from "./deleteRow.js";
 import {countRows} from "./countRows.js";
 import {changeName} from "./changeName.js";
 import {noteContent} from "./noteContent.js";
+import {archiveNote} from "./archiveNote.js";
 
 
 const table = document.querySelector(".table>tbody");
@@ -16,5 +17,6 @@ const addButtonClickEventHandle = function() {
     rows = countRows();
     changeName();
     noteContent();
+    archiveNote();
 }
 export  {addButtonClickEventHandle};
