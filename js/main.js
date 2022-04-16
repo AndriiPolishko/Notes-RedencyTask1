@@ -2,9 +2,11 @@
 //the most important file
 import {addButtonClickEventHandle} from "./addButtonEvent.js";
 import {showArchived} from "./showArchived.js";
+import {prepareSummaryTable} from "./prepareSummaryTable.js";
 
 const addButton = document.querySelector(".addNote");
 addButton.addEventListener('click',
     addButtonClickEventHandle);
 
+prepareSummaryTable();
 showArchived();

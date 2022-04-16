@@ -1,5 +1,5 @@
 let actions = document.createElement("td");
-actions.className = "actions"
+actions.className = "actionsContainer"
 const style = getComputedStyle(document.body)
 
 let edit = document.createElement("i");

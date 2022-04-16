@@ -1,5 +1,6 @@
 import {suitableDayForm} from "./date.js";
 import {actions} from "./actions.js";
+import {CATEGORIES} from "./addButtonEvent.js";
 
 function forName() {
     let name = document.createElement("td");
@@ -19,6 +20,7 @@ function forName() {
 
 function forCreated() {
     const createdCeil = document.createElement("td");
+    createdCeil.className = "createContainer";
     const createdData = document.createElement("span");
     createdData.textContent = suitableDayForm;
     createdCeil.appendChild(createdData);
@@ -26,25 +28,6 @@ function forCreated() {
 }
 
 function forCategory() {
-    let CATEGORIES = {
-        "Click Me": {
-            name: "default",
-            icon: ""
-        },
-        "Task": {
-            name: "Task",
-            icon: ["fa-solid", "fa-cart-shopping"]
-        },
-        "Random Thought": {
-            name: "Random Thought",
-            icon:["fa-solid", "fa-gear"]
-        },
-        "Idea": {
-            name:"Idea",
-            icon:["fa-solid", "fa-lightbulb"]
-        },
-    };
-
     const icon = document.createElement("i");
 
     const createElement = (selector, text='', options ={}) => {
@@ -86,7 +69,7 @@ function forCategory() {
     renderCategories(select, CATEGORIES);
     select.addEventListener('change', categoryChangeHandler);
     let category = document.createElement("td");
-
+    category.className = "categoryContainer";
     category.appendChild(select)
 
     return category;
@@ -104,6 +87,7 @@ function forContent() {
 
 function forDates() {
     const datesContainer = document.createElement("td");
+    datesContainer.className = "datesContainer";
     const dates = document.createElement("textarea");
     dates.className = "dates";
     dates.setAttribute("readonly","true")

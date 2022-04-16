@@ -6,9 +6,29 @@ import {noteContent} from "./noteContent.js";
 import {archiveNote} from "./archiveNote.js";
 
 
+
 const table = document.querySelector(".table>tbody");
 const numberOfRows = {n:0};
 let rows;
+
+export const CATEGORIES = {
+    "Click Me": {
+        name: "Default",
+        icon: ""
+    },
+    "Task": {
+        name: "Task",
+        icon: ["fa-solid", "fa-cart-shopping"]
+    },
+    "Random Thought": {
+        name: "Random Thought",
+        icon:["fa-solid", "fa-gear"]
+    },
+    "Idea": {
+        name:"Idea",
+        icon:["fa-solid", "fa-lightbulb"]
+    },
+};
 
 const addButtonClickEventHandle = function() {
     let note = createNote(numberOfRows);

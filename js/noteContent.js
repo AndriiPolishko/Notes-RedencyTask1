@@ -18,10 +18,11 @@ function handleContentSize(contentText) {
 }
 
 function handleDates(contentText) {
-    const dateRegEx = /\d{2}([\/])\d{2}\1\d{4}/g;
+    const dateRegEx = /\d{2}([\/.-])\d{2}\1\d{4}/g;
     const dates = contentText.match(dateRegEx);
-    if(dates)
+    if(dates) {
         return dates.join(',');
+    }
     return "";
 }
 
@@ -39,9 +40,7 @@ const handleContentClick = function (e) {
         const content = parentRow.querySelector(".content");
         content.textContent = handleContentSize(contentText);
         const dates = parentRow.querySelector(".dates");
-
-        dates.textContent = handleDates(contentText);
-        handleDates(contentText);
+        dates.value = handleDates(contentText);
         modalContainer.style.display = "none";
     })
 };
