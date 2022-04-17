@@ -1,8 +1,9 @@
 'use strict'
-//the most important file
-import {addButtonClickEventHandle} from "./addButtonEvent.js";
+
+import {addButtonClickEventHandle} from "./addButtonEvent.js";//the most important file
 import {showArchived} from "./showArchived.js";
 import {prepareSummaryTable} from "./prepareSummaryTable.js";
+import {deleteAllNotes} from "./deleteAllNotes.js";
 
 const addButton = document.querySelector(".addNote");
 addButton.addEventListener('click',
@@ -10,3 +11,4 @@ addButton.addEventListener('click',
 
 prepareSummaryTable();
 showArchived();
+deleteAllNotes();
