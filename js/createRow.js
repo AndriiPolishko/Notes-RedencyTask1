@@ -1,6 +1,7 @@
 import {suitableDayForm} from "./date.js";
 import {actions} from "./actions.js";
 import {CATEGORIES} from "./addButtonEvent.js";
+import {renderSummaryTable} from "./renderSummaryTable.js";
 
 function forName() {
     let name = document.createElement("td");
@@ -12,7 +13,7 @@ function forName() {
     let nameText = document.createElement("textarea");
     nameText.className = "name";
     nameText.setAttribute("contentEditable","true")
-    nameText.textContent = "Click Me";
+    nameText.textContent = "Click me";
     container.appendChild(nameText)
     name.appendChild(container);
     return name;
@@ -47,6 +48,7 @@ function forCategory() {
         let note = e.target.closest(".note");
         let circle = note.querySelector(".circle")
         circle.appendChild(icon);
+
     };
 
     const renderCategories = (parent, categories) => {
@@ -60,6 +62,7 @@ function forCategory() {
     const categoryChangeHandler = (e) => {
         const value = e.target.value;
         changeIcon(icon,CATEGORIES[value].icon,e)
+        renderSummaryTable();
     };
 
     let select = document.createElement("select");
@@ -80,7 +83,7 @@ function forContent() {
     let content = document.createElement("textarea");
     content.setAttribute("readonly","true")
     content.className = "content";
-    content.textContent = "Click Me";
+    content.textContent = "Click me";
     contentContainer.appendChild(content);
     return contentContainer;
 }
@@ -96,6 +99,7 @@ function forDates() {
 }
 
 export function createNote (numberOfRows) {
+
     let note = document.createElement("tr");
 
     note.id = numberOfRows.n;

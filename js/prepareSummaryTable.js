@@ -8,6 +8,7 @@ export function prepareSummaryTable() {
         const category = currentCategories[i];
 
         const categoryRow = document.createElement("tr");
+        categoryRow.id = CATEGORIES[category].name;
         categoryRow.className = "note";
 
         const noteCategory = document.createElement("td");

@@ -4,6 +4,7 @@ import {countRows} from "./countRows.js";
 import {changeName} from "./changeName.js";
 import {noteContent} from "./noteContent.js";
 import {archiveNote} from "./archiveNote.js";
+import {renderSummaryTable} from "./renderSummaryTable.js";
 
 
 
@@ -12,7 +13,7 @@ const numberOfRows = {n:0};
 let rows;
 
 export const CATEGORIES = {
-    "Click Me": {
+    "Default": {
         name: "Default",
         icon: ""
     },
@@ -20,8 +21,8 @@ export const CATEGORIES = {
         name: "Task",
         icon: ["fa-solid", "fa-cart-shopping"]
     },
-    "Random Thought": {
-        name: "Random Thought",
+    "Random_Thought": {
+        name: "Random_Thought",
         icon:["fa-solid", "fa-gear"]
     },
     "Idea": {
@@ -31,6 +32,7 @@ export const CATEGORIES = {
 };
 
 const addButtonClickEventHandle = function() {
+
     let note = createNote(numberOfRows);
     table.appendChild(note);
     deleteRow();
@@ -38,5 +40,6 @@ const addButtonClickEventHandle = function() {
     changeName();
     noteContent();
     archiveNote();
+    renderSummaryTable()
 }
 export  {addButtonClickEventHandle};
