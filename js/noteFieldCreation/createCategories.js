@@ -1,10 +1,10 @@
-import { CATEGORIES } from "../addButtonEvent.js";
-import { renderSummaryTable } from "../renderSummaryTable.js";
+import { CATEGORIES } from '../global/addButtonEvent.js';
+import { renderSummaryTable } from '../summaryTable/renderSummaryTable.js';
 
 export function forCategory() {
-  const icon = document.createElement("i");
+  const icon = document.createElement('i');
 
-  const createElement = (selector, text = "", options = {}) => {
+  const createElement = (selector, text = '', options = {}) => {
     const element = document.createElement(selector);
     element.innerHTML = text;
     for (const key in options) {
@@ -18,14 +18,14 @@ export function forCategory() {
     for (const className of classNames) {
       icon.classList.add(className);
     }
-    let note = e.target.closest(".note");
-    let circle = note.querySelector(".circle");
+    let note = e.target.closest('.note');
+    let circle = note.querySelector('.circle');
     circle.appendChild(icon);
   };
 
   const renderCategories = (parent, categories) => {
     for (const category in categories) {
-      const child = createElement("option", category, {
+      const child = createElement('option', category, {
         value: category,
       });
       parent.appendChild(child);
@@ -38,14 +38,14 @@ export function forCategory() {
     renderSummaryTable();
   };
 
-  let select = document.createElement("select");
-  select.className = "category";
-  select.setAttribute("name", "categories");
+  let select = document.createElement('select');
+  select.className = 'category';
+  select.setAttribute('name', 'categories');
 
   renderCategories(select, CATEGORIES);
-  select.addEventListener("change", categoryChangeHandler);
-  let category = document.createElement("td");
-  category.className = "categoryContainer";
+  select.addEventListener('change', categoryChangeHandler);
+  let category = document.createElement('td');
+  category.className = 'categoryContainer';
   category.appendChild(select);
 
   return category;

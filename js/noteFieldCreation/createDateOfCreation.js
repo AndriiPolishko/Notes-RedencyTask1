@@ -1,4 +1,4 @@
-import { suitableDayForm } from '../date.js';
+import { suitableDayForm } from '../noteFieldsInteractions/date.js';
 
 export function forCreated() {
   const createdCeil = document.createElement('td');
