@@ -9,8 +9,6 @@ export function noteContent() {
     })
 }
 
-const [modalContainer] = contentModalWindowElements();
-
 function handleContentSize(contentText) {
     if (contentText.length > 11)
         return `${contentText.slice(0, 9)}...`
@@ -26,6 +24,8 @@ function handleDates(contentText) {
     return "";
 }
 
+let [modalContainer] = contentModalWindowElements();
+
 const handleContentClick = function (e) {
     modalContainer.style.display = "flex";
     document.body.appendChild(modalContainer);
@@ -33,14 +33,20 @@ const handleContentClick = function (e) {
     const parentRow = e.target.closest(".note");
     const parentRowId = parentRow.getAttribute("id");
 
+    document.querySelector(".modalTextArea").value = sessionStorage.getItem(`${parentRowId}Content`);
+
+    let contentText = document.querySelector(".modalTextArea").value;
+
     const closeModal = document.querySelector(".fa-xmark");
-    closeModal.addEventListener('click', () => {
-        const contentText = document.querySelector(".modalTextArea").value;
-        sessionStorage.setItem(`${parentRowId}Content`, contentText)
-        const content = parentRow.querySelector(".content");
-        content.textContent = handleContentSize(contentText);
-        const dates = parentRow.querySelector(".dates");
-        dates.value = handleDates(contentText);
-        modalContainer.style.display = "none";
+        closeModal.addEventListener('click', (e) => {
+            console.log(parentRowId);
+            sessionStorage.setItem(`${parentRowId}Content`, contentText)
+            const content = parentRow.querySelector(".content");
+            content.textContent = handleContentSize(contentText);
+            const dates = parentRow.querySelector(".dates");
+            dates.value = handleDates(contentText);
+            modalContainer = e.target.closest(".modalContainer");
+            modalContainer.style.display = "none";
     })
+
 };
