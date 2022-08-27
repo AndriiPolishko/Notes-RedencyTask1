@@ -1,11 +1,9 @@
 import { contentModalWindowElements } from './contentModalWindowElements.js';
 
 export function noteContent() {
-  const contentBlocks = document.querySelectorAll('.content');
+  const contentBlocks = document.querySelector('tbody');
 
-  contentBlocks.forEach((content) => {
-    content.addEventListener('click', handleContentClick);
-  });
+  contentBlocks.addEventListener('click', handleContentClick);
 }
 
 function handleContentSize(contentText) {
@@ -22,30 +20,36 @@ function handleDates(contentText) {
   return '';
 }
 
-let [modalContainer] = contentModalWindowElements();
+const [modalContainer] = contentModalWindowElements();
+document.body.appendChild(modalContainer);
+
+let parentRowId;
+let contentText;
+let parentRow;
 
 const handleContentClick = function (e) {
-  modalContainer.style.display = 'flex';
-  document.body.appendChild(modalContainer);
+  if (e.target.className === 'content') {
+    modalContainer.style.display = 'flex';
 
-  const parentRow = e.target.closest('.note');
-  const parentRowId = parentRow.getAttribute('id');
+    parentRow = e.target.closest('.note');
+    console.log(parentRow);
+    parentRowId = parentRow.getAttribute('id');
 
-  document.querySelector('.modalTextArea').value = sessionStorage.getItem(
-    `${parentRowId}Content`
-  );
-
-  let contentText = document.querySelector('.modalTextArea').value;
-
-  const closeModal = document.querySelector('.fa-xmark');
-  closeModal.addEventListener('click', (e) => {
-    console.log(parentRowId);
-    sessionStorage.setItem(`${parentRowId}Content`, contentText);
-    const content = parentRow.querySelector('.content');
-    content.textContent = handleContentSize(contentText);
-    const dates = parentRow.querySelector('.dates');
-    dates.value = handleDates(contentText);
-    modalContainer = e.target.closest('.modalContainer');
-    modalContainer.style.display = 'none';
-  });
+    document.querySelector('.modalTextArea').value = sessionStorage.getItem(
+      `${parentRowId}Content`
+    );
+  }
 };
+
+const closeModal = document.querySelector('.fa-xmark');
+
+closeModal.addEventListener('click', (e) => {
+  contentText = document.querySelector('.modalTextArea').value;
+  sessionStorage.setItem(`${parentRowId}Content`, contentText);
+  const content = parentRow.querySelector('.content');
+  content.textContent = handleContentSize(contentText);
+  const dates = parentRow.querySelector('.dates');
+  dates.value = handleDates(contentText);
+  //modalContainer = e.target.closest('.modalContainer');
+  modalContainer.style.display = 'none';
+});
