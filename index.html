@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/bd82a89e41.js" crossorigin="anonymous"></script>
+    <title>Notes</title>
+</head>
+<body>
+    <section id="active" class="notes">
+        <table  class="table">
+            <thead>
+                <tr class="table-header">
+                    <th class="table-header-name">name</th>
+                    <th class="table-header-created">created</th>
+                    <th class="table-header-category">category</th>
+                    <th class="table-header-content">content</th>
+                    <th class="table-header-dates">dates</th>
+                    <th class="table-archiveAndDelete">
+                        <div class="actionsContainer">
+                            <i class="fa-solid fa-box"></i>
+                            <i class="fa-solid fa-trash deleteAllNotes"></i>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="activeBody">
+            </tbody>
+        </table>
+        <button type="button" class="addNote">Create Note</button>
+    </section>
+
+    <section id="archived" class="notes">
+        <table  class="table">
+            <thead>
+            <tr class="table-header">
+                <th class="table-header-name">name</th>
+                <th class="table-header-created">created</th>
+                <th class="table-header-category">category</th>
+                <th class="table-header-content">content</th>
+                <th class="table-header-dates">dates</th>
+                <th class="table-archiveAndDelete">
+                    <i class="fa-solid fa-box-open"></i>
+                    <i class="fa-solid fa-trash deleteAllNotes"></i>
+                </th>
+            </tr>
+            </thead>
+            <tbody class="archiveBody">
+            </tbody>
+        </table>
+    </section>
+
+    <section class="summary-notes">
+        <table class="summary-table">
+            <thead>
+                <tr class="summary-table-header">
+                    <th class ="summary-categories"><span>note category</span></th>
+                    <th class ="summary-active"><span>active</span></th>
+                    <th class ="summary-archived"><span>archived</span></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

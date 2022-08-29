@@ -1,0 +1,284 @@
+:root {
+    --header-grey: rgb(125, 125, 128);
+    --white: rgb(255,255,255);
+    --note: rgb(230, 232, 244);
+    --dark-gray: rgb(96, 96, 97);
+    --window-gray: rgba(96, 96, 97, 0.7);
+    --modal-window: rgba(96, 96, 97,0.8);
+    --white-transparent: rgba(255,255,255,0.7);
+    --red: rgb(255, 49, 43);
+}
+
+* {
+    font-family: Arial,Helvetica, sans-serif;
+}
+
+body {
+    padding: 15px 30px;
+    overflow-x: auto;
+
+}
+
+.notes {
+    display: flex;
+    flex-direction: column;
+}
+
+.table {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-collapse: collapse;
+}
+
+thead {
+    text-transform: capitalize;
+}
+
+td {
+    color: var(--modal-window);
+}
+
+i {
+    color: var(--white);
+}
+ 
+.table-header {
+    background-color: var(--header-grey);
+    color:var(--white);
+    width: 100%;
+    flex-direction: row;
+    color: var(--white);
+    display: flex;
+    align-self: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.table-header-name {
+    /* margin: 0 200px 0 50px; */
+    margin:0 10% 0 5%;
+}
+
+.table-header-created , .table-header-category, .table-header-content {
+    margin: 0 7.5%
+    /* margin: 0 100px 0 */
+}
+
+.table-archiveAndDelete {
+    margin: 0 0 0 13%
+    /* margin:0 20px 0 auto; */
+}
+
+.actionsContainer {
+    white-space: nowrap;
+}
+
+.addNote {
+    width: fit-content;
+    padding: 0 5px;
+    align-self: end;
+}
+
+.note {
+    background-color: var(--note);
+    width: 100%;
+    flex-direction: row;
+    color: var(--white);
+    display: flex;
+    align-self: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+td{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    margin-right: 0;
+    align-items: center;
+}
+
+.circle {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--dark-gray);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.circle i {
+    width: auto;
+}
+
+.actionsContainer i{
+    margin-right: 5px;
+}
+
+.category {
+    background-color: var(--note);
+    appearance: none;
+    border: none;
+    color: var(--white);
+}
+
+.nameContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0 200px 0 50px;
+}
+
+.createContainer {
+    margin: 0 150px 0 0;
+}
+
+.categoryContainer {
+    margin: 0 145px 0 0;
+}
+
+.datesContainer {
+    margin: 0 0 0 55px;
+}
+
+.actionsContainer {
+    margin:0 15px 0 auto;
+}
+
+.name {
+    width: 110px;
+    color: var(--white);
+    font-size: 1rem;
+    height: 18px;
+    resize: none;
+    border: none;
+    overflow: hidden;
+    background-color: var(--note);
+}
+
+select {
+    font-size: 1rem;
+}
+
+.modalContainer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--window-gray);
+}
+
+.modalInner {
+    background-color: var(--modal-window);
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    height: 65%;
+    width: 80%;
+}
+
+.modalTextArea {
+    margin-top: 30px;
+    background-color: var(--white-transparent);
+    text-transform: none;
+    width: 100%;
+    height: 80%;
+    resize: none;
+    border: none;
+
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+.content, .dates {
+    width: 100px;
+    color: var(--white);
+    font-size: 1rem;
+    height: 18px;
+    resize: none;
+    border: none;
+    overflow: hidden;
+    background-color: var(--note);
+
+}
+
+.fa-xmark {
+    color: var(--red);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fa-xmark:hover,
+.fa-xmark:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#archived {
+    display: none;
+}
+
+.fa-box, .fa-box-open {
+    width:20px;
+}
+
+.summary-notes {
+    margin-top: 20px;
+}
+
+.summary-table {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-collapse: collapse;
+}
+
+.summary-table-header {
+    background-color: var(--header-grey);
+    width: 100%;
+    flex-direction: row;
+    color: var(--white);
+    display: flex;
+    align-self: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.summary-categories{
+    margin: 0 500px 0 50px;
+
+}
+
+.summary-active {
+    margin-right: 200px;
+}
+
+.summary-notes .noteCategory {
+    min-width: 500px;
+    max-width: 500px;
+}
+
+.numberOfActiveContainer {
+    margin: 0 0 0 160px;
+}
+
+.numberOfArchivedContainer {
+    margin: 0 0 0 200px ;
+}
+
+.number {
+    width:50px;
+}
