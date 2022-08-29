@@ -50,6 +50,5 @@ closeModal.addEventListener('click', (e) => {
   content.textContent = handleContentSize(contentText);
   const dates = parentRow.querySelector('.dates');
   dates.value = handleDates(contentText);
-  //modalContainer = e.target.closest('.modalContainer');
   modalContainer.style.display = 'none';
 });

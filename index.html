@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/bd82a89e41.js" crossorigin="anonymous"></script>
     <title>Notes</title>
@@ -11,16 +11,18 @@
     <section id="active" class="notes">
         <table  class="table">
             <thead>
-            <tr class="table-header">
-                <th class="table-header-name">name</th>
-                <th class="table-header-created">created</th>
-                <th class="table-header-category">category</th>
-                <th class="table-header-content">content</th>
-                <th class="table-header-dates">dates</th>
-                <th class="table-archiveAndDelete">
-                    <i class="fa-solid fa-box"></i>
-                    <i class="fa-solid fa-trash deleteAllNotes"></i>
-                </th>
+                <tr class="table-header">
+                    <th class="table-header-name">name</th>
+                    <th class="table-header-created">created</th>
+                    <th class="table-header-category">category</th>
+                    <th class="table-header-content">content</th>
+                    <th class="table-header-dates">dates</th>
+                    <th class="table-archiveAndDelete">
+                        <div class="actionsContainer">
+                            <i class="fa-solid fa-box"></i>
+                            <i class="fa-solid fa-trash deleteAllNotes"></i>
+                        </div>
+                    </th>
                 </tr>
             </thead>
             <tbody class="activeBody">

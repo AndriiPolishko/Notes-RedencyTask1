@@ -1,5 +1,5 @@
 :root {
-    --header-grey: rgb(152, 152, 153);
+    --header-grey: rgb(125, 125, 128);
     --white: rgb(255,255,255);
     --note: rgb(230, 232, 244);
     --dark-gray: rgb(96, 96, 97);
@@ -10,12 +10,12 @@
 }
 
 * {
-    text-transform: capitalize;
     font-family: Arial,Helvetica, sans-serif;
 }
 
 body {
     padding: 15px 30px;
+    overflow-x: auto;
 
 }
 
@@ -31,8 +31,21 @@ body {
     border-collapse: collapse;
 }
 
+thead {
+    text-transform: capitalize;
+}
+
+td {
+    color: var(--modal-window);
+}
+
+i {
+    color: var(--white);
+}
+ 
 .table-header {
     background-color: var(--header-grey);
+    color:var(--white);
     width: 100%;
     flex-direction: row;
     color: var(--white);
@@ -44,15 +57,22 @@ body {
 }
 
 .table-header-name {
-    margin: 0 200px 0 50px;
+    /* margin: 0 200px 0 50px; */
+    margin:0 10% 0 5%;
 }
 
 .table-header-created , .table-header-category, .table-header-content {
-    margin: 0 100px 0
+    margin: 0 7.5%
+    /* margin: 0 100px 0 */
 }
 
 .table-archiveAndDelete {
-    margin:0 20px 0 auto;
+    margin: 0 0 0 13%
+    /* margin:0 20px 0 auto; */
+}
+
+.actionsContainer {
+    white-space: nowrap;
 }
 
 .addNote {

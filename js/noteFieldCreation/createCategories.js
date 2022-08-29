@@ -41,6 +41,7 @@ export function forCategory() {
   let select = document.createElement('select');
   select.className = 'category';
   select.setAttribute('name', 'categories');
+  select.style.color = 'rgba(96, 96, 97,0.8)';
 
   renderCategories(select, CATEGORIES);
   select.addEventListener('change', categoryChangeHandler);

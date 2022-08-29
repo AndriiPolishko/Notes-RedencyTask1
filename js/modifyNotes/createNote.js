@@ -1,4 +1,4 @@
-import { actions } from '../global/delete-archive_All.js';
+import { actions } from '../global/delete-archive.js';
 
 import { forName } from '../noteFieldCreation/createName.js';
 import { forCreated } from '../noteFieldCreation/createDateOfCreation.js';
